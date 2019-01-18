@@ -1,5 +1,5 @@
 # only18plus
-Prestashop module for blocking user access by asking to provide their age.
+[PrestaShop](https://www.prestashop.com/it) module for blocking user access by asking to provide their age.
 
 It uses prestashop timezone for checking age via Ajax call, uses a cookie to hold the information.
 
@@ -17,3 +17,8 @@ allowed.
 The required age can be configured to meet your requirements
 
 ![backend configuration ](img/screen3.png)
+
+
+## Compatibility
+
+Tested with [PrestaShop](https://www.prestashop.com/it) 1.6.x
