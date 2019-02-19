@@ -12,12 +12,12 @@
 *}
 
 <script>
-    $.only18Plus({
+    var only18PlusConfig = {
         "redirectTo": "{$base_dir}",
         "minAge": {$only18plus.ONLY18PLUS_REQUIRED_AGE},
         "title": "{$only18plus.ONLY18PLUS_MODAL_TITLE}",
         "text": "{$only18plus.ONLY18PLUS_POLICY_TEXT}",
-        "ajaxUrl" : '{$base_dir}modules/only18plus/ajaxCalls.php',
-        "language" : '{$lang_iso}'
-    });
+        "ajaxUrl": '{$base_dir}modules/only18plus/ajaxCalls.php',
+        "language": '{$lang_iso}'
+    };
 </script>

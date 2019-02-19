@@ -323,6 +323,7 @@ class Only18plus extends Module
         $configValues = $this->getConfigFormValues();
         $configValues = array_merge($configValues, $this->getTranslations());
         $this->context->smarty->assign('only18plus', $configValues);
+        $this->context->smarty->assign("lang_iso", $this->context->language->iso_code);
 
 
         // TODO allow disable of logged in checking

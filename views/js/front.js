@@ -215,5 +215,8 @@
         });
     };
 }(jQuery));
+$(document).ready(function () {
+    $.only18Plus(only18PlusConfig);
+});
 
 
