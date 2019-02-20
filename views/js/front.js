@@ -19,7 +19,19 @@
             title : 'Age Verification',
             text : 'This Website requires you to be [21] years or older to enter. Please enter your Date of Birth in the fields below in order to continue:',
             ajaxUrl : "ajaxProcessAgeVerify",
-            language : "it"
+            language : "it",
+            submit_label: 'Submit',
+            thank_you : 'Thank you!',
+            access : 'Now you can access our store...',
+            warning : 'Warning',
+            no_access: 'You can not login to our shop as it is required greater age for buying.',
+            invalid_day : 'Day missing or invalid',
+            invalid_month : 'Month missing or invalid',
+            invalid_year : 'Year missing or invalid',
+            service_error : 'Unable to verify service, please come back later',
+            policy_text : 'To continue, you must at least be %s years old, please verify your age by entering the date of birth in the form below .',
+            modal_title : 'Confirm your age',
+            months : ['January','February','March','April','May','June','July','August','September','October','November','December']
         }, options);
 
 
@@ -32,41 +44,21 @@
 
 
             getSubmitLabel : function () {
-                var label = {};
-                label.it = "Invia";
-                label.gb = "Submit";
-                return label[settings.language];
+                return settings.submit_label;
             },
             getMonths: function () {
-                var months = {};
-                months.it = ['Gennaio','Febbrario','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
-                months.gb = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-                return months[settings.language];
+               return settings.months;
             },
             getSuccessMessage : function() {
-                var successMsg = {};
-                successMsg.it = "<h3>Grazie!<h3><p>Ora puoi accedere al sito nostro negozio...</p>";
-                successMsg.gb = "<h3>Thank you!</h3><p>Now you can access our store...</p>";
-                return successMsg[settings.language];
+               return "<h3>" +settings.thank_you +"<h3><p>" + settings.access+ "</p>";
+
             },
             getErrorMessage : function () {
-                var errorMsg = {};
-                errorMsg.it = "<h3 class='only18plus-title-warning'>Attenzione!</h3><p>Non puoi accedere al nostro negozio in quanto è richiesta un'età maggiore per l'acquisto.</p>";
-                errorMsg.gb = "<h3 class='only18plus-title-warning'>Warning</h3><p>You can not login to our shop as it is required greater age for buying.</p>";
-                return errorMsg[settings.language];
+                return "<h3 class='only18plus-title-warning'>" + settings.warning + "</h3>" +
+                    "<p>"+ settings.no_access+"</p>";
             },
             getErrorByMessage : function (msg) {
-                var errorMsg = {};
-                errorMsg.day = {};
-                errorMsg.year = {};
-                errorMsg.service = {};
-                errorMsg.day.it = 'Giorno non inserito o non valido';
-                errorMsg.year.it = 'Anno non inserito o non valido';
-                errorMsg.service.it = "Impossibile raggiungere il servizio, riprova più tardi";
-                errorMsg.day.gb = 'Day missing or invalid';
-                errorMsg.year.gb = 'Year missing or invalid';
-                errorMsg.service.gb = "Unable to verify service, please come back later";
-                return errorMsg[msg][settings.language];
+                return settings[msg];
             },
             getDate : function(){
                 var month = $('.ac-container .month').val();
@@ -80,10 +72,10 @@
             validate : function(){
                 _this.errors = [];
                 if (/^([0-9]|[12]\d|3[0-1])$/.test(_this.day) === false) {
-                    _this.errors.push(_this.getErrorByMessage('day'));
+                    _this.errors.push(_this.getErrorByMessage('invalid_day'));
                 };
                 if (/^(19|20)\d{2}$/.test(_this.year) === false) {
-                    _this.errors.push(_this.getErrorByMessage('year'));
+                    _this.errors.push(_this.getErrorByMessage('invalid_year'));
                 };
                 _this.clearErrors();
                 _this.displayErrors();
@@ -113,12 +105,12 @@
             },
             buildHtml : function(){
 
-                var text = settings.text;
+                var text = settings.policy_text;
                 var months = _this.getMonths();
                 var html = '';
                 html += '<div class="ac-overlay"></div>';
                 html += '<div class="ac-container">';
-                html += '<h2>' + settings.title + '</h2>';
+                html += '<h2>' + settings.modal_title + '</h2>';
                 html += '<p>' + text.replace('[21]','<strong>'+settings.minAge+'</strong>'); + '</p>';
                 html += '<div class="errors"></div>';
                 html += '<div class="fields"><select class="month">';
@@ -201,7 +193,7 @@
                         }
                     })
                     .fail(function() {
-                        _this.showError(_this.getErrorByMessage('service'));
+                        _this.showError(_this.getErrorByMessage('service_error'));
                     });
 
             }
@@ -216,7 +208,9 @@
     };
 }(jQuery));
 $(document).ready(function () {
-    $.only18Plus(only18PlusConfig);
+    if (only18PlusConfig) {
+        $.only18Plus(only18PlusConfig);
+    }
 });
 
 

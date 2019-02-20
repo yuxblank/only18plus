@@ -230,24 +230,6 @@ class Only18plus extends Module
 
     }
 
-    protected function getTranslations()
-    {
-
-        $age = Configuration::get('ONLY18PLUS_REQUIRED_AGE');
-        $languageVars = [
-            'it' => [
-                "ONLY18PLUS_POLICY_TEXT" => "Per proseguire devi almeno avere " . $age . " anni, conferma la tua età inserendo la data di nascita nel modulo sottostante.",
-                "ONLY18PLUS_MODAL_TITLE" => "Conferma la tua età"],
-            'gb' => [
-                "ONLY18PLUS_POLICY_TEXT" => "To continue, you must at least be " . $age . " years old, please verify your age by entering the date of birth in the form below .",
-                "ONLY18PLUS_MODAL_TITLE" => "Confirm your age"]
-        ];
-        $lang = $this->context->language->iso_code;
-
-        return $languageVars[$lang];
-
-    }
-
     /**
      * Save form data.
      */
@@ -321,14 +303,40 @@ class Only18plus extends Module
     public function hookDisplayTop()
     {
         $configValues = $this->getConfigFormValues();
-        $configValues = array_merge($configValues, $this->getTranslations());
+        $configValues = array_merge($configValues, $this->getContextValues());
+        $age = Configuration::get('ONLY18PLUS_REQUIRED_AGE');
+
+        $configValues['policy_text'] = sprintf($configValues['policy_text'], $age);
         $this->context->smarty->assign('only18plus', $configValues);
         $this->context->smarty->assign("lang_iso", $this->context->language->iso_code);
 
+        //var_dump($configValues);
+
 
         // TODO allow disable of logged in checking
-        if (!$this->context->customer->isLogged() && !$this->context->cookie->only18plus && $configValues['ONLY18PLUS_LIVE_MODE']) {
+            if (!$this->context->customer->isLogged() && !$this->context->cookie->only18plus && $configValues['ONLY18PLUS_LIVE_MODE']) {
             return $this->display(__FILE__, 'only18plus.modal.tpl');
         }
+    }
+
+    private function getContextValues(){
+        $months =  ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        foreach ($months as $month) {
+            $this->l($month, $this->name);
+        }
+        return array(
+            'months' => $months,
+            'submit_label' => $this->l('Submit', $this->name),
+            'thank_you' => $this->l('Thank you!', $this->name),
+            'access' => $this->l('Now you can access our store...', $this->name),
+            'warning' => $this->l('Warning', $this->name),
+            'no_access' => $this->l('You can not login to our shop as it is required greater age for buying.', $this->name),
+            'invalid_day' => $this->l('Day missing or invalid', $this->name),
+            'invalid_month' => $this->l('Month missing or invalid', $this->name),
+            'invalid_year' => $this->l('Year missing or invalid', $this->name),
+            'service_error' => $this->l('Unable to verify service, please come back later', $this->name),
+            'policy_text' => $this->l('To continue, you must at least be %s years old, please verify your age by entering the date of birth in the form below .', $this->name),
+            'modal_title' => $this->l('Confirm your age', $this->name)
+        );
     }
 }
