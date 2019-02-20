@@ -137,10 +137,10 @@ class Only18plus extends Module
                 'input' => array(
                     array(
                         'type' => 'switch',
-                        'label' => $this->l('Live mode'),
+                        'label' => $this->l('Enable'),
                         'name' => 'ONLY18PLUS_LIVE_MODE',
                         'is_bool' => true,
-                        'desc' => $this->l('Use this module in live mode'),
+                        'desc' => $this->l('Enable the module'),
                         'values' => array(
                             array(
                                 'id' => 'active_on',
@@ -320,10 +320,19 @@ class Only18plus extends Module
     }
 
     private function getContextValues(){
-        $months =  ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        foreach ($months as $month) {
-            $this->l($month, $this->name);
-        }
+        $months =  [
+            $this->l('January', $this->name),
+            $this->l('February',$this->name),
+            $this->l('March',$this->name),
+            $this->l('April',$this->name),
+            $this->l('May', $this->name),
+            $this->l('June',$this->name),
+            $this->l('July',$this->name),
+            $this->l('August', $this->name),
+            $this->l('September',$this->name),
+            $this->l('October',$this->name),
+            $this->l('November',$this->name),
+            $this->l('December',$this->name)];
         return array(
             'months' => $months,
             'submit_label' => $this->l('Submit', $this->name),
