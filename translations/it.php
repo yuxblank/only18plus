@@ -1,0 +1,32 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{only18plus}prestashop>only18plus_8400f94bcfaeb1a51640aecabd4c5670'] = 'only18plus';
+$_MODULE['<{only18plus}prestashop>only18plus_1a27c94e896af260fc922bdb7750d5cc'] = 'only18plus è un modulo per verificare l\'età dell\'utente.';
+$_MODULE['<{only18plus}prestashop>only18plus_9651507f40ba047feb2d98c6ee8c5b02'] = 'Sicuro di voler eliminare il modulo?';
+$_MODULE['<{only18plus}prestashop>only18plus_32540398379f2d529395f4cc2ae1cfd8'] = 'Per acquistare e accedere a questo sito è necessario essere maggiorenni. Si prega di includere la data di nascita nei seguenti campi per continuare';
+$_MODULE['<{only18plus}prestashop>only18plus_e25d8a53d4ca8ab821e536c05c764ad7'] = 'Conferma la tua età';
+$_MODULE['<{only18plus}prestashop>only18plus_f4f70727dc34561dfde1a3c529b6205c'] = 'Impostazioni';
+$_MODULE['<{only18plus}prestashop>only18plus_2faec1f9f8cc7f8f40d521c4dd574f49'] = 'Abilita';
+$_MODULE['<{only18plus}prestashop>only18plus_270a49a70f3c1fdba2d3c08ad7663d0d'] = 'Abilita il modulo';
+$_MODULE['<{only18plus}prestashop>only18plus_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Abilitato';
+$_MODULE['<{only18plus}prestashop>only18plus_b9f5c797ebbf55adccdd8539a65a0241'] = 'Disabilitato';
+$_MODULE['<{only18plus}prestashop>only18plus_1fabecdbd0563d7701e8ac8feef66f2d'] = 'Titolo della modal';
+$_MODULE['<{only18plus}prestashop>only18plus_fe38edeed42cb933a19d53992d98822e'] = 'Titolo della modal';
+$_MODULE['<{only18plus}prestashop>only18plus_1f0dc7c3b31e570a7c91d3de818ec572'] = ' Inserisci un testo da visualizzare come contenuto modale in cui spieghi la tua politica di controllo dell\'età';
+$_MODULE['<{only18plus}prestashop>only18plus_bcf3c07f34c14257ae5a574a34fc7f01'] = 'Testo di avviso da visualizzare';
+$_MODULE['<{only18plus}prestashop>only18plus_0f378e34d16b1f5a0b1e8b866b282e92'] = 'Massima eta per permettere l\'accesso';
+$_MODULE['<{only18plus}prestashop>only18plus_19d5c800b499fec7ef52877894bb6d5d'] = 'Massima eta per permettere l\'accesso al sito';
+$_MODULE['<{only18plus}prestashop>only18plus_5a79fd7cb1ef6584c80cfbd2f3fdb3b3'] = 'Inserisci un numero';
+$_MODULE['<{only18plus}prestashop>only18plus_c9cc8cce247e49bae79f15173ce97354'] = 'Salva';
+$_MODULE['<{only18plus}prestashop>only18plus_a4d3b161ce1309df1c4e25df28694b7b'] = 'Invia';
+$_MODULE['<{only18plus}prestashop>only18plus_498cd895eb5a102c5aeb977e2b928dee'] = 'Grazie!';
+$_MODULE['<{only18plus}prestashop>only18plus_efbf3e6c917dbfee2be451f062c26aa9'] = 'Ora puoi accedere al negozio';
+$_MODULE['<{only18plus}prestashop>only18plus_0eaadb4fcb48a0a0ed7bc9868be9fbaa'] = 'Attenzione';
+$_MODULE['<{only18plus}prestashop>only18plus_9ac38d7100611df1bd8af590bba93123'] = 'Non è possibile accedere al nostro negozio in quanto è richiesta una maggiore età per l\'acquisto.';
+$_MODULE['<{only18plus}prestashop>only18plus_9d6cd62c122190533b46e08092e630ab'] = 'Giorno mancante o non valido';
+$_MODULE['<{only18plus}prestashop>only18plus_f5010c5770b24361bae345b86049d97e'] = 'Mese mancante o non valido';
+$_MODULE['<{only18plus}prestashop>only18plus_ec1347f8d437624d40cbec2cab780e9f'] = 'Anno mancante o non valido';
+$_MODULE['<{only18plus}prestashop>only18plus_4169b7db21f3c1c365d639f0aa19039e'] = 'Impossibile verificare il servizio, per favore torna più tardi';
+$_MODULE['<{only18plus}prestashop>only18plus_778abc685d85bec590ad8d9952674c41'] = 'Per continuare, è necessario aver compiuto almeno %s anni di età, verificare la propria età inserendo la data di nascita nel modulo sottostante.';
