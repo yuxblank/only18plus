@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
-	<name>only18plus</name>
-	<displayName><![CDATA[only18plus]]></displayName>
-	<version><![CDATA[1.0.0]]></version>
-	<description><![CDATA[only18plus is a module for blocking and verifying user age.]]></description>
-	<author><![CDATA[Yuri Blanc]]></author>
-	<tab><![CDATA[front_office_features]]></tab>
-	<confirmUninstall><![CDATA[Are you sure you want to uninstall the module]]></confirmUninstall>
-	<is_configurable>1</is_configurable>
-	<need_instance>1</need_instance>
+    <name>only18plus</name>
+    <displayName><![CDATA[only18plus]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[only18plus &egrave; un modulo per verificare l&#039;et&agrave; dell&#039;utente.]]></description>
+    <author><![CDATA[Yuri Blanc]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Sicuro di voler eliminare il modulo?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
 	<limited_countries></limited_countries>
 </module>

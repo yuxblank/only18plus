@@ -310,10 +310,6 @@ class Only18plus extends Module
         $this->context->smarty->assign('only18plus', $configValues);
         $this->context->smarty->assign("lang_iso", $this->context->language->iso_code);
 
-        //var_dump($configValues);
-
-
-        // TODO allow disable of logged in checking
             if (!$this->context->customer->isLogged() && !$this->context->cookie->only18plus && $configValues['ONLY18PLUS_LIVE_MODE']) {
             return $this->display(__FILE__, 'only18plus.modal.tpl');
         }

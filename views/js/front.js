@@ -208,7 +208,7 @@
     };
 }(jQuery));
 $(document).ready(function () {
-    if (only18PlusConfig) {
+    if (typeof only18PlusConfig !== 'undefined') {
         $.only18Plus(only18PlusConfig);
     }
 });
