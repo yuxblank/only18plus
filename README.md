@@ -21,4 +21,16 @@ The required age can be configured to meet your requirements
 
 ## Compatibility
 
+Prestashop 1.6.7 - 1.7.x
+
 Tested with [PrestaShop](https://www.prestashop.com/it) 1.6.x
+
+Tested with [PrestaShop](https://www.prestashop.com/it) 1.7.x
+
+
+
+
+## Credits
+
+### Logo 
+<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"  title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"  title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
