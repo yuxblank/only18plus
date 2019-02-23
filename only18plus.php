@@ -22,7 +22,7 @@ class Only18plus extends Module
     {
         $this->name = 'only18plus';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'Yuri Blanc';
         $this->need_instance = 1;
 
