@@ -16,9 +16,7 @@
     var only18PlusConfig = {
         redirectTo: "{$base_dir}",
         minAge: {$only18plus.ONLY18PLUS_REQUIRED_AGE},
-        title: "{$only18plus.ONLY18PLUS_MODAL_TITLE}",
-        text: "{$only18plus.ONLY18PLUS_POLICY_TEXT}",
-        ajaxUrl: "{$base_dir}modules/only18plus/ajaxCalls.php",
+        ajaxUrl: "{$base_dir}/modules/only18plus/ajaxCalls.php",
         language: "{$lang_iso}",
         thank_you : "{$only18plus.thank_you}",
         access : "{$only18plus.access}",

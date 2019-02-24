@@ -22,7 +22,7 @@ class Only18plus extends Module
     {
         $this->name = 'only18plus';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.1';
+        $this->version = '1.0.1-RC2';
         $this->author = 'Yuri Blanc';
         $this->need_instance = 1;
 
@@ -309,6 +309,7 @@ class Only18plus extends Module
         $configValues['policy_text'] = sprintf($configValues['policy_text'], $age);
         $this->context->smarty->assign('only18plus', $configValues);
         $this->context->smarty->assign("lang_iso", $this->context->language->iso_code);
+        $this->context->smarty->assign("base_dir", $this->getBaseDir());
 
             if (!$this->context->customer->isLogged() && !$this->context->cookie->only18plus && $configValues['ONLY18PLUS_LIVE_MODE']) {
             return $this->display(__FILE__, 'only18plus.modal.tpl');
@@ -341,7 +342,17 @@ class Only18plus extends Module
             'invalid_year' => $this->l('Year missing or invalid', $this->name),
             'service_error' => $this->l('Unable to verify service, please come back later', $this->name),
             'policy_text' => $this->l('To continue, you must at least be %s years old, please verify your age by entering the date of birth in the form below .', $this->name),
-            'modal_title' => $this->l('Confirm your age', $this->name)
+            'modal_title' => $this->l('Confirm your age', $this->name),
         );
+    }
+
+
+    private function getBaseDir(){
+        if (Configuration::get('PS_SSL_ENABLED')){
+
+            return str_replace("http", "https", _PS_BASE_URL_SSL_);
+
+        }
+        return _PS_BASE_URL_;
     }
 }
