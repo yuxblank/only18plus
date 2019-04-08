@@ -348,11 +348,10 @@ class Only18plus extends Module
 
 
     private function getBaseDir(){
-        if (Configuration::get('PS_SSL_ENABLED')){
-
-            return str_replace("http", "https", _PS_BASE_URL_SSL_);
-
+        $url =  Tools::getShopDomain(true) . "/";
+        if(Configuration::get('PS_SSL_ENABLED')){
+            return str_replace("http", "https", $url);
         }
-        return _PS_BASE_URL_;
+        return $url;
     }
 }
