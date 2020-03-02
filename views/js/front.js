@@ -111,7 +111,7 @@
                 html += '<div class="ac-overlay"></div>';
                 html += '<div class="ac-container">';
                 html += '<h2 class="ac-container-title">' + settings.modal_title + '</h2>';
-                html += '<p>' + text.replace('[21]','<strong>'+settings.minAge+'</strong>'); + '</p>';
+                html += '<p>' + text.replace('[21]','<strong>'+settings.minAge+'</strong>') + '</p>';
                 html += '<div class="errors"></div>';
                 html += '<div class="fields"><select class="month">';
                 for(var i=0;i<_this.getMonths().length;i++){
