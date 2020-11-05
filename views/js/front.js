@@ -113,12 +113,13 @@
                 html += '<h2 class="ac-container-title">' + settings.modal_title + '</h2>';
                 html += '<p>' + text.replace('[21]','<strong>'+settings.minAge+'</strong>') + '</p>';
                 html += '<div class="errors"></div>';
-                html += '<div class="fields"><select class="month">';
+                html += '<div class="fields">';
+                html += '<input class="day" maxlength="2" placeholder="01" />';
+                html +=  '<select class="month">';
                 for(var i=0;i<_this.getMonths().length;i++){
                     html += '<option value="'+i+'">'+months[i]+'</option>'
                 }
                 html += '</select>';
-                html += '<input class="day" maxlength="2" placeholder="01" />';
                 html += '<input class="year" maxlength="4" placeholder="1989"/>';
                 html += '<button>'+_this.getSubmitLabel()+'</button></div></div>';
 
