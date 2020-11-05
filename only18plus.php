@@ -349,7 +349,7 @@ class Only18plus extends Module
 
     private function getBaseDir(){
         $url =  Tools::getShopDomain(true) . "/";
-        if(Configuration::get('PS_SSL_ENABLED')){
+        if(Configuration::get('PS_SSL_ENABLED') && strpos($url, "http") !== false){
             return str_replace("http", "https", $url);
         }
         return $url;
